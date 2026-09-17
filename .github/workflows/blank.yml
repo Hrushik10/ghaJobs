@@ -1,15 +1,17 @@
 name: Mjobs
-on: workflow_dispatch
+on: 
+  push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This is build"
+      - run: echo "This is Build"
+            echo "Hi"
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This is test"
+      - run: echo "This is Test"
   deploy:
     needs: test
     runs-on: ubuntu-latest
